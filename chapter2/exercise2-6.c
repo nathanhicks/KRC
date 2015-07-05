@@ -8,12 +8,11 @@
  */
 #include <stdio.h>
 
+/* setbits: exercise solution (see function definition) */
 unsigned setbits(unsigned x, int p, int n, int y);
-/* getbits: get n bits from position p
- * from K&R p. 49
- */
+/* getbits: get n bits from position p (from K&R p.49) */
 unsigned getbits(unsigned x, int p, int n);
-
+/* Prints the 32-bit binary form of a decimal value */
 void dec2bin(unsigned x);
 
 int main(void)
@@ -86,14 +85,14 @@ unsigned setbits(unsigned x,int p,int n,int y)
 	lhs = x & x_bitmask;
 	// Uncomment for debug purposes
 	// print binary representation to stdout
-	dec2bin(r);
-	dec2bin(y);
-	dec2bin(rightmost_nbits_y);
-	dec2bin(rhs);
-	dec2bin(x);
-	dec2bin(x_bitmask);
-	dec2bin(lhs);
-	dec2bin(lhs | rhs);
+	printf("r = ");dec2bin(r);
+	printf("y = ");dec2bin(y);
+	printf("rightmost_nbits_y = ");dec2bin(rightmost_nbits_y);
+	printf("rhs = ");dec2bin(rhs);
+	printf("x = ");dec2bin(x);
+	printf("x_bitmask = ");dec2bin(x_bitmask);
+	printf("lhs = ");dec2bin(lhs);
+	printf("lhs | rhs = ");dec2bin(lhs | rhs);
 	
 	/* Task #5: lhs | rhs = solution
 	 * Let lhs = 10100010, rhs = 00011100
