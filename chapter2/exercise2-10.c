@@ -1,3 +1,15 @@
+/* Rewrite the function lower, which converts upper case letters to lower case,
+with a conditional expression instead of if-else.
+
+From p.43 function lower:
+int lower(int c)
+{
+    if (c >= 'A' && c <= 'Z')
+        return c + 'a' - 'A';
+    else
+        return c;
+}
+*/
 #include<stdio.h>
 
 int lower(int c);
