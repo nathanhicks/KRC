@@ -4,17 +4,33 @@
  * correctly, regardless of the machine on which it runs.
  */
 
+ /* Explanation:
+
+ In a two's complement number representation,  2147483648 cannot be represented
+ in a signed 32-bit integer, so we have to display it either as an unsigned long
+ int, or a long long int.
+
+ My solution simply changes the data type from a 32-bit int to an unsigned long
+ */
+
 #include<stdio.h>
 #include<string.h>
+#include<limits.h>
+
+void itoa(unsigned long n, char s[]);
+void reverse(char s[]);
 
 int main(void)
 {
 
+  char s[1000];
+  itoa(INT_MIN,s);
+  printf("%s",s);
   return 0;
 }
 
 /* itoa:  convert n to characters in s */
-void itoa(int n, char s[])
+void itoa(unsigned long  n, char s[])
 {
   int i, sign;
 
